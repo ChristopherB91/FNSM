@@ -6,7 +6,7 @@ class ListStudents extends Component {
       {
           super(props)
           this.state={
-                students:[] 
+                report:[] 
           }
           this.addStudent=this.addStudent.bind(this);
           this.editStudent=this.editStudent.bind(this);
@@ -17,7 +17,7 @@ class ListStudents extends Component {
     
      componentDidMount() {
          StudentService.getStudents().then((res) => {
-             this.setState({students:res.data});
+             this.setState({report:res.data});
          });
      }
      
@@ -50,7 +50,7 @@ class ListStudents extends Component {
      {
          this.props.history.push('/general-reports');
      }
-
+     
     render() {
         return (
             <div>
@@ -71,17 +71,17 @@ class ListStudents extends Component {
                         </thead>
                         <tbody>
                             {
-                                this.state.students.map(
-                                     student =>
-                                     <tr key={student.id}>
-                                         <td>{student.id}</td>
-                                         <td>{student.name}</td>
-                                         <td>{student.problem}</td>
-                                         <td>{student.location}</td>
+                                this.state.report.map(
+                                     report =>
+                                     <tr key={report.id}>
+                                         <td>{report.id}</td>
+                                         <td>{report.name}</td>
+                                         <td>{report.problem}</td>
+                                         <td>{report.location}</td>
                                          <td>
-                                            <button onClick={() =>this.editStudent(student.id)} className="btn btn-primary">Update</button> 
-                                            <button onClick={() =>this.deleteStudent(student.id)} className="btn btn-danger">Delete</button> 
-                                            <button onClick={() =>this.viewStudent(student.id)} className="btn btn-primary">View</button> 
+                                            <button onClick={() =>this.editStudent(report.id)} className="btn btn-primary">Update</button> 
+                                            <button onClick={() =>this.deleteStudent(report.id)} className="btn btn-danger">Delete</button> 
+                                            <button onClick={() =>this.viewStudent(report.id)} className="btn btn-primary">View</button> 
                                          </td>
                                      </tr>
                                 )

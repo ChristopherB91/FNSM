@@ -7,20 +7,20 @@ class StudentService{
        return axios.get(STUDENT_API_BASE_URL+"/allreports");
     }
 
-    createStudent(student){
-        return axios.post(STUDENT_API_BASE_URL+"/addreport",student);
+    createStudent(person){
+        return axios.post(STUDENT_API_BASE_URL+"/addreport",person);
     }
 
     getReportById(id){
         return axios.get(STUDENT_API_BASE_URL+"/report/"+id);
     }
 
-    updateStudent(student,id){
-        return axios.put(STUDENT_API_BASE_URL+"/report/"+id,student);
+    updateStudent(person,id){
+        return axios.put(STUDENT_API_BASE_URL+"/student/"+id,person);
     }
 
     deleteStudent(id){
-        return axios.delete(STUDENT_API_BASE_URL+"/report/"+id);
+        return axios.delete(STUDENT_API_BASE_URL+"/student/"+id);
     }
 
 }
