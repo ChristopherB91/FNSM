@@ -23,6 +23,11 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     button{
-        background-color: ${(props) => props.theme.body};
-        color: ${(props) => props.theme.fontColor};
+        background-color: ${(props) => props.theme.fontColor};
+        color: ${(props) => props.theme.body};
+    }
+    
+    table,th,td{
+      background: ${(props) => props.theme.fontColor};
+      color: ${(props) => props.theme.body};
     }`;

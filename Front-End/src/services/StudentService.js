@@ -16,11 +16,11 @@ class StudentService{
     }
 
     updateStudent(person,id){
-        return axios.put(STUDENT_API_BASE_URL+"/student/"+id,person);
+        return axios.put(STUDENT_API_BASE_URL+"/report/"+id,person);
     }
 
     deleteStudent(id){
-        return axios.delete(STUDENT_API_BASE_URL+"/student/"+id);
+        return axios.delete(STUDENT_API_BASE_URL+"/report/"+id);
     }
 
 }
